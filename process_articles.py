@@ -15,9 +15,9 @@ import dotenv
 # Load up .env file to allow to update Token if necessary
 dotenv_file = dotenv.find_dotenv()
 
-TOKEN = os.getenv('TOKEN', 'Not_Found')
-X_API_KEY = os.getenv('X_API_Key', 'Not_Found')
-REFRESH_TOKEN = os.getenv('REFRESH_TOKEN', 'Not_Found')
+TOKEN = os.getenv('TOKEN', '')
+X_API_KEY = os.getenv('X_API_Key', '')
+REFRESH_TOKEN = os.getenv('REFRESH_TOKEN', '')
 
 BATCH_SIZE = 10  # Limit of Public Siera API
 
@@ -45,11 +45,6 @@ def get_articles() -> list[dict]:
             "id": "298972_1402",
             "title": "JPMorgan Joins Net Zero Banking Alliance, Committing to Align Lending & Investments with Global Climate Goals",
             "text": "JPMorgan Chase announced that it has joined the Net Zero Banking Alliance, joining its Wall Street peers Bank of America, Citi and Morgan Stanley in signing on to the coalition of banks dedicated to advancing global net zero goals through their financing activities.\nMarisa Buchanan, Managing Director, Global Head of Sustainability at JPMorgan Chase & Co., said in a statement: “We are joining the Net-Zero Banking Alliance because we support the",
-        },
-        {
-            "id": "108201_2793503",
-            "title": "Bill to give AZ troopers body cameras would also restrict video release",
-            "text": "A proposal to buy body cameras for every Arizona state trooper would also prevent the Department of Public Safety from releasing most of the video to the public.\nWE'LL TAKE A LOOK AT YOURSEVEN DAY COMING UP."
         }
     ]
 
