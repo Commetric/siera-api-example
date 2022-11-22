@@ -21,9 +21,11 @@ REFRESH_TOKEN = os.getenv('REFRESH_TOKEN', '')
 
 BATCH_SIZE = 10  # Limit of Public Siera API
 
-url_version = "https://siera.commetric.cloud/api/v1/version"
-url_new_token = "https://siera.commetric.cloud/api/v1/new_token"
-url_tag = "https://siera.commetric.cloud/api/v1/tag"
+api_url = "https://siera.commetric.cloud/api"
+api_ver = "v1"
+url_version = f"{api_url}/{api_ver}/version"
+url_new_token = f"{api_url}/{api_ver}/new_token"
+url_tag = f"{api_url}/{api_ver}/tag"
 
 
 def get_articles() -> list[dict]:
