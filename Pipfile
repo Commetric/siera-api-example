@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 requests = "*"
 python-dotenv = "*"
-pymysql = "*"
 
 [dev-packages]
 
