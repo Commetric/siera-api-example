@@ -7,6 +7,7 @@ replaced by a database call.
 """
 
 import os
+from time import sleep
 import json
 from itertools import islice
 import requests
@@ -91,6 +92,10 @@ def _call_siera_api(method: str, url: str, data: str) -> dict:
             return _call_siera_api(method, url, data)
             # "Unauthorized"
             # "The incoming token has expired"
+        elif response.status_code == 504:
+            print('Timeout. Introducing a delay to let the system reach an idle state before retrying.')
+            sleep(15)
+            return _call_siera_api(method, url, data)
         else:
             print(response, response.text)
             raise Exception('Unexpected error', response.status_code, response.text)
